@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -24,6 +25,9 @@ module.exports = {
     filename: 'bundle.js'
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      template: './index.html'
+    }),
     new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
